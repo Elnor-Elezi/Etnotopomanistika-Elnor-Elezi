@@ -146,9 +146,6 @@ body.dark-reading{--p:#161a1c;--pl:#1d2226;--pw:#20262b;--e9:#faf6ef;--e8:#f0e8d
 @keyframes pf{0%,100%{opacity:0;transform:translateY(0) scale(.5)}20%{opacity:.25}50%{opacity:.1;transform:translateY(-140px) scale(1)}80%{opacity:.25}}
 .hero-grad{position:absolute;inset:0;background:radial-gradient(ellipse at 25% 55%,rgba(30,58,95,.3) 0%,transparent 55%),radial-gradient(ellipse at 75% 35%,rgba(61,90,62,.2) 0%,transparent 45%),radial-gradient(ellipse at 50% 100%,rgba(26,21,16,.9) 0%,transparent 50%),radial-gradient(ellipse at 50% 0%,rgba(26,21,16,.6) 0%,transparent 50%)}
 .hero-c{position:relative;z-index:2;text-align:center;max-width:900px;padding:2rem}
-.hero-portrait{width:132px;height:132px;margin:0 auto 1.6rem;border-radius:50%;padding:5px;background:linear-gradient(135deg,rgba(184,150,62,.95),rgba(240,232,218,.18));box-shadow:0 22px 50px rgba(0,0,0,.32),0 0 0 1px rgba(221,209,193,.16);opacity:0;animation:fu 1s ease .18s forwards}
-.hero-portrait img{width:100%;height:100%;object-fit:cover;object-position:center 34%;border-radius:50%;display:block;border:2px solid rgba(240,232,218,.78);background:var(--e8)}
-.hero-portrait .portrait-placeholder{width:100%;height:100%;border-radius:50%;display:flex;align-items:center;justify-content:center;border:2px solid rgba(240,232,218,.78);background:radial-gradient(circle at 32% 20%,rgba(240,232,218,.28),transparent 35%),linear-gradient(135deg,var(--wd),var(--e7));font-family:var(--fd);font-size:2.25rem;font-weight:700;color:var(--p);letter-spacing:.08em}
 .hero-label{font-size:.68rem;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:var(--ga);margin-bottom:2.5rem;opacity:0;animation:fu 1s ease .3s forwards;display:flex;align-items:center;justify-content:center;gap:1rem}
 .hero-label::before,.hero-label::after{content:'';width:30px;height:1px;background:var(--ga);opacity:.5}
 .hero-title{font-family:var(--fd);font-size:clamp(2.8rem,6.5vw,5rem);font-weight:600;line-height:1.1;color:var(--p);margin-bottom:1.8rem;opacity:0;animation:fu 1s ease .5s forwards}
@@ -348,17 +345,17 @@ body.dark-reading{--p:#161a1c;--pl:#1d2226;--pw:#20262b;--e9:#faf6ef;--e8:#f0e8d
 
 /* ABOUT */
 .about{background:var(--e9);padding:6rem 2rem}
-.about-ct{display:flex;gap:3rem;align-items:center;max-width:800px;margin:0 auto}
-.ab-aw{flex-shrink:0;position:relative}
-.ab-av{width:110px;height:110px;border-radius:50%;background:linear-gradient(135deg,var(--wd),var(--e7));display:flex;align-items:center;justify-content:center;font-family:var(--fd);font-size:2.2rem;font-weight:600;color:var(--p);position:relative;z-index:1;transition:transform .4s}
-.ab-av:hover{transform:scale(1.08)}
-.ab-ring{position:absolute;inset:-6px;border-radius:50%;border:1px solid rgba(184,150,62,.25);transition:all .4s}
-.ab-av:hover~.ab-ring{inset:-10px;border-color:rgba(184,150,62,.5)}
-.about-txt h3{font-family:var(--fd);font-size:1.6rem;font-weight:600;color:var(--p);margin-bottom:.3rem}
-.about-role{font-size:.68rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--ga);margin-bottom:.45rem}
-.about-degree{font-size:.8rem;color:var(--e2);margin-bottom:1rem}
-.about-txt p{font-size:.9rem;color:var(--e2);line-height:1.85}
-@media(max-width:600px){.about-ct{flex-direction:column;text-align:center}}
+.people-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:2.5rem}
+.person-card{display:grid;grid-template-columns:138px 1fr;gap:1.6rem;align-items:center;min-height:360px;border:1px solid rgba(221,209,193,.12);background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.025));border-radius:28px;padding:2.2rem;position:relative;overflow:hidden;isolation:isolate}
+.person-card::before{content:'';position:absolute;inset:-1px;background:radial-gradient(circle at var(--mx,50%) var(--my,50%),rgba(255,255,255,.12),transparent 58%);opacity:0;transition:opacity .45s ease;pointer-events:none;z-index:0}
+.person-card:hover::before{opacity:1}
+.person-card > *{position:relative;z-index:1}
+.person-card:hover{transform:translateY(-8px);box-shadow:0 22px 50px rgba(0,0,0,.22)}
+.profile-circle{width:136px;height:136px;border-radius:50%;border:2px dashed rgba(212,179,102,.68);background:radial-gradient(circle at 35% 25%,rgba(240,232,218,.16),transparent 38%),rgba(255,255,255,.04);box-shadow:0 18px 38px rgba(0,0,0,.16),inset 0 0 0 8px rgba(184,150,62,.05)}
+.person-card h3{font-family:var(--fd);font-size:1.7rem;line-height:1.15;color:var(--p);margin-bottom:.65rem}
+.person-role{font-size:.68rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--ga);margin-bottom:.8rem}
+.person-card p{font-size:.9rem;color:var(--e2);line-height:1.75}
+@media(max-width:900px){.people-grid{grid-template-columns:1fr}.person-card{grid-template-columns:1fr;text-align:left}.profile-circle{margin:0 auto 1rem}}
 
 /* FOOTER */
 .foot{background:var(--e9);border-top:1px solid rgba(221,209,193,.06);padding:3rem 2rem;text-align:center}
@@ -373,17 +370,17 @@ body.dark-reading{--p:#161a1c;--pl:#1d2226;--pw:#20262b;--e9:#faf6ef;--e8:#f0e8d
 
 /* UI UPGRADES */
 body{background:radial-gradient(circle at 10% 10%,rgba(184,150,62,.08),transparent 25%),radial-gradient(circle at 85% 15%,rgba(44,82,130,.08),transparent 25%),var(--p)}
-.nav,.nav-links a,.hero-btn,.ov-card,.cc,.fc,.ci,.foot-top,.map-item,.map-panel,.story-card,.about-note,.profile-card{transition:transform .55s cubic-bezier(.22,1,.36,1),box-shadow .55s cubic-bezier(.22,1,.36,1),border-color .4s ease,background .4s ease,color .3s ease}
+.nav,.nav-links a,.hero-btn,.ov-card,.cc,.fc,.ci,.foot-top,.map-item,.map-panel,.story-card,.person-card{transition:transform .55s cubic-bezier(.22,1,.36,1),box-shadow .55s cubic-bezier(.22,1,.36,1),border-color .4s ease,background .4s ease,color .3s ease}
 .nav.scrolled{background:rgba(26,21,16,.88);backdrop-filter:blur(18px);box-shadow:0 10px 40px rgba(0,0,0,.22)}
 .hero-btn{border-radius:999px;box-shadow:0 16px 38px rgba(184,150,62,.18)}
 .hero-btn:hover{transform:translateY(-5px) scale(1.01);box-shadow:0 18px 40px rgba(184,150,62,.26)}
-.ov-card,.fc,.ci,.story-card,.map-panel,.map-item,.about-note,.profile-card{position:relative;overflow:hidden;isolation:isolate}
-.ov-card::before,.fc::before,.ci::before,.story-card::before,.map-panel::before,.map-item::before,.about-note::before,.profile-card::before{content:'';position:absolute;inset:-1px;background:radial-gradient(circle at var(--mx,50%) var(--my,50%),rgba(255,255,255,.42),transparent 58%);opacity:0;transition:opacity .45s ease;pointer-events:none;z-index:0}
-.ov-card:hover::before,.fc:hover::before,.ci:hover::before,.story-card:hover::before,.map-panel:hover::before,.map-item:hover::before,.about-note:hover::before,.profile-card:hover::before{opacity:1}
-.ov-card > *,.fc > *,.ci > *,.story-card > *,.map-panel > *,.map-item > *,.about-note > *,.profile-card > *{position:relative;z-index:1}
-.ov-card:hover,.fc:hover,.ci:hover,.story-card:hover,.map-panel:hover,.map-item:hover,.about-note:hover,.profile-card:hover{transform:translateY(-10px);box-shadow:0 22px 50px rgba(26,21,16,.12)}
+.ov-card,.fc,.ci,.story-card,.map-panel,.map-item{position:relative;overflow:hidden;isolation:isolate}
+.ov-card::before,.fc::before,.ci::before,.story-card::before,.map-panel::before,.map-item::before{content:'';position:absolute;inset:-1px;background:radial-gradient(circle at var(--mx,50%) var(--my,50%),rgba(255,255,255,.42),transparent 58%);opacity:0;transition:opacity .45s ease;pointer-events:none;z-index:0}
+.ov-card:hover::before,.fc:hover::before,.ci:hover::before,.story-card:hover::before,.map-panel:hover::before,.map-item:hover::before{opacity:1}
+.ov-card > *,.fc > *,.ci > *,.story-card > *,.map-panel > *,.map-item > *{position:relative;z-index:1}
+.ov-card:hover,.fc:hover,.ci:hover,.story-card:hover,.map-panel:hover,.map-item:hover{transform:translateY(-10px);box-shadow:0 22px 50px rgba(26,21,16,.12)}
 .cc:hover{transform:translateY(-8px) scale(1.01);box-shadow:0 20px 44px rgba(0,0,0,.24)}
-.hero-sub,.hero-intro,.ss,.map-info p,.fc p,.ov-card p,.c-txt,.about-txt p{max-width:unset}
+.hero-sub,.hero-intro,.ss,.map-info p,.fc p,.ov-card p,.c-txt{max-width:unset}
 a:focus-visible,button:focus-visible{outline:2px solid var(--ga);outline-offset:4px}
 
 .story-sec{background:var(--pl);padding:5rem 2rem 6rem}
@@ -423,18 +420,6 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--ga);outline-offset:
 .map-item span{font-size:.76rem;color:var(--e5)}
 
 .conc .st{margin-bottom:.6rem}
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;align-items:stretch}
-.about-note{padding:2.2rem;border:1px solid rgba(221,209,193,.1);background:rgba(255,255,255,.04);border-radius:28px}
-.about-note .sl{margin-bottom:.8rem}
-.about-note blockquote{font-family:var(--fd);font-size:1.7rem;line-height:1.22;color:var(--p);margin-bottom:1rem}
-.about-note p{font-size:.92rem;color:var(--e2);line-height:1.85}
-.profile-placeholders{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin-top:1.5rem}
-.profile-card{border:1px solid rgba(221,209,193,.12);background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.025));border-radius:28px;padding:2rem;text-align:center}
-.profile-circle{width:136px;height:136px;margin:0 auto 1.2rem;border-radius:50%;border:2px dashed rgba(212,179,102,.68);background:radial-gradient(circle at 35% 25%,rgba(240,232,218,.16),transparent 38%),rgba(255,255,255,.04);display:flex;align-items:center;justify-content:center;color:var(--gal);font-family:var(--fd);font-size:2.1rem;font-weight:700;box-shadow:0 18px 38px rgba(0,0,0,.16),inset 0 0 0 8px rgba(184,150,62,.05)}
-.profile-card h3{font-family:var(--fd);font-size:1.55rem;color:var(--p);margin-bottom:.35rem}
-.profile-card p{font-size:.88rem;color:var(--e2);line-height:1.75;text-align:left}
-.profile-note{grid-column:1/-1;text-align:center;color:var(--e2);font-size:.86rem;line-height:1.7;padding:1rem 1.5rem;border:1px solid rgba(221,209,193,.08);border-radius:22px;background:rgba(255,255,255,.03)}
-
 .skip-link{position:absolute;left:1rem;top:-4rem;z-index:10000;background:var(--ga);color:var(--e9);padding:.75rem 1rem;border-radius:999px;font-size:.75rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;transition:top .25s ease}
 .skip-link:focus{top:1rem}
 .breadcrumb{max-width:1140px;margin:0 auto 1.2rem;padding:0 2rem;font-size:.72rem;color:var(--e5);letter-spacing:.04em}
@@ -442,10 +427,8 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--ga);outline-offset:
 .findability{position:sticky;top:72px;z-index:40;background:rgba(250,246,239,.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--e1);box-shadow:0 10px 28px rgba(26,21,16,.06)}
 .findability-in{max-width:1140px;margin:0 auto;padding:1rem 2rem;display:flex;align-items:center;justify-content:center}
 .toc{display:flex;flex-wrap:wrap;justify-content:center;gap:.45rem}
-.toc a,.share-heading{font-size:.62rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--e6);border:1px solid var(--e1);background:rgba(255,255,255,.72);border-radius:999px;padding:.55rem .75rem;text-decoration:none;transition:all .25s ease}
-.toc a:hover,.share-heading:hover{border-color:var(--ga);color:var(--ga);transform:translateY(-2px)}
-.share-heading{margin-left:.65rem;cursor:pointer}
-.share-heading.copied{background:var(--ga);color:var(--e9);border-color:var(--ga)}
+.toc a{font-size:.62rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--e6);border:1px solid var(--e1);background:rgba(255,255,255,.72);border-radius:999px;padding:.55rem .75rem;text-decoration:none;transition:all .25s ease}
+.toc a:hover{border-color:var(--ga);color:var(--ga);transform:translateY(-2px)}
 .city-gallery{background:var(--pw)}
 .city-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:1.2rem;margin-top:2.5rem}
 .city-card{grid-column:span 4;position:relative;overflow:hidden;border-radius:28px;border:1px solid var(--e1);background:var(--p);box-shadow:0 16px 34px rgba(26,21,16,.07);min-height:410px;display:flex;flex-direction:column}
@@ -480,7 +463,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--ga);outline-offset:
 .foot-links a:hover{color:var(--ga)}
 
 @media(max-width:900px){
-  .story-grid,.about-grid,.profile-placeholders,.map-list,.glossary-grid,.related-grid,.notes,.faq-list{grid-template-columns:1fr}
+  .story-grid,.people-grid,.map-list,.glossary-grid,.related-grid,.notes,.faq-list{grid-template-columns:1fr}
   .findability{position:relative;top:auto}
   .toc{justify-content:flex-start}
   .city-card,.city-card.featured{grid-column:1/-1}
@@ -512,7 +495,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--ga);outline-offset:
       <li><a href="#impact">Ndikimi</a></li>
       <li><a href="#about">Rreth Meje</a></li>
     </ul>
-    <button class="theme-toggle" type="button" id="themeToggle" aria-pressed="false">Lexim</button>
+    <button class="theme-toggle" type="button" id="themeToggle" aria-pressed="false">Normal</button>
   </div>
 </nav>
 
@@ -521,9 +504,6 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--ga);outline-offset:
   <div class="hero-particles" id="hp"></div>
   <div class="hero-grad"></div>
   <div class="hero-c">
-    <figure class="hero-portrait" aria-label="Vend për portretin e Elnor Elezit">
-      <span class="portrait-placeholder" aria-hidden="true">EE</span>
-    </figure>
     <div class="hero-label">Projekt Studimor</div>
     <h1 class="hero-title">Etnotoponomastika dhe Lidhja e Saj me <em>Gjeografinë</em></h1>
     <p class="hero-sub">Si emrat e vendeve zbulojnë historinë, identitetin dhe mënyrën se si njeriu e ka kuptuar hapësirën ku jeton</p>
@@ -818,34 +798,31 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--ga);outline-offset:
 </section>
 
 <section class="sec about" id="about">
-  <div class="sec-in"><div class="about-grid rv">
-    <div class="about-ct">
-      <div class="ab-aw"><div class="ab-av">EE</div><div class="ab-ring"></div></div>
-      <div class="about-txt">
-        <h3>Elnor Elezi</h3>
-        <div class="about-role">Student i Masterit Shkencor në Mësuesi</div>
-        <div class="about-degree">Bachelor në Gjuhë Angleze dhe Studime Gjermane - Fakulteti i Gjuhëve të Huaja, Universiteti i Tiranës</div>
-        <p>Unë jam student i Masterit Shkencor në Mësuesi dhe kam përfunduar studimet bachelor në Gjuhë Angleze dhe Studime Gjermane në Fakultetin e Gjuhëve të Huaja, Universiteti i Tiranës. Puna ime akademike lidhet kryesisht me gjuhën, komunikimin dhe kërkimin shkencor. Ky formim më ka ndihmuar të zhvilloj aftësi në analizën e gjuhës, interpretimin e strukturave gjuhësore dhe kuptimin e lidhjes mes gjuhës, kulturës dhe shoqërisë. Përvoja ime në marketing mbetet pjesë dytësore e profilit tim, ndërsa fokusi i këtij projekti është komunikimi akademik dhe kërkimi gjuhësor.</p>
-      </div>
+  <div class="sec-in">
+    <div class="rv">
+      <div class="sl">Rreth projektit</div>
+      <h2 class="st">Autori dhe pranimi akademik</h2>
+      <p class="ss">Dy profile të shkurtra për punimin Etnotoponomastika dhe kontekstin akademik të tij.</p>
     </div>
-    <aside class="about-note">
-      <div class="sl">Mendimi im personal</div>
-      <p>Për mua, pjesa më interesante e kësaj teme është mënyra se si emrat e vendeve mbajnë brenda tyre gjurmë të historisë, kulturës dhe pranisë njerëzore në hapësirë. Gjatë punës për këtë projekt, kuptova se territori nuk lexohet vetëm përmes hartës, por edhe përmes gjuhës që e emërton. Pikërisht kjo e bën etnotoponomastikën një fushë me shumë vlerë: ajo lidh në mënyrë të drejtpërdrejtë fjalën, kujtesën historike dhe vendin.</p>
-    </aside>
-    <div class="profile-placeholders" aria-label="Autor dhe pranimi i punimit">
-      <article class="profile-card">
-        <div class="profile-circle" aria-label="Vend për fotografinë e Elnor Elezit">EE</div>
+    <div class="people-grid rv" aria-label="Autori dhe profesoresha">
+      <article class="person-card">
+        <div class="profile-circle" aria-label="Foto e Elnor Elezit"></div>
+        <div>
         <h3>Elnor Elezi</h3>
-        <p>Autor i punimit dhe prezantimit mbi etnotopomanistikën, toponiminë, toponimet shqiptare dhe lidhjen e tyre me gjeografinë.</p>
+        <div class="person-role">Student i Masterit Shkencor në Mësuesi</div>
+        <p>Autor i projektit mbi etnotoponomastikën, toponiminë dhe toponimet shqiptare. Ka përfunduar Bachelor në Gjuhë Angleze dhe Studime Gjermane në Fakultetin e Gjuhëve të Huaja, Universiteti i Tiranës, me fokus në gjuhë, komunikim dhe kërkim akademik.</p>
+        </div>
       </article>
-      <article class="profile-card">
-        <div class="profile-circle" aria-label="Vend për fotografinë e Prof. Assoc. Dr. Adriana Dervishaj">AD</div>
+      <article class="person-card">
+        <div class="profile-circle" aria-label="Foto e Prof. Assoc. Dr. Adriana Dervishaj"></div>
+        <div>
         <h3>Prof. Assoc. Dr. Adriana Dervishaj</h3>
-        <p>Prof. Assoc. Dr. Adriana Dervishaj, e njohur edhe si Diana Toshkezi, është akademike në Universitetin e Tiranës, Fakulteti i Gjuhëve të Huaja, Departamenti i Gjuhës Angleze. Ajo ka përvojë shumëvjeçare në mësimdhënie dhe kërkim shkencor në gjuhësi, komunikim ndërkulturor, metodologji të mësimit të gjuhëve të huaja dhe shkenca komunikimi. Puna e saj akademike përfshin metoda inovative të mësimdhënies, teknika krijuese të të nxënit dhe qasje digjitale në edukimin gjuhësor. Ky punim u pranua me mbështetjen e saj akademike në kuadër të projektit Etnotoponomastika.</p>
+        <div class="person-role">Fakulteti i Gjuhëve të Huaja, Universiteti i Tiranës</div>
+        <p>Akademike në Departamentin e Gjuhës Angleze, e njohur edhe si Diana Toshkezi. Fushat e saj përfshijnë gjuhësinë, komunikimin ndërkulturor, metodologjinë e mësimit të gjuhëve të huaja dhe qasjet digjitale në edukim. Ky punim u pranua me mbështetjen e saj akademike.</p>
+        </div>
       </article>
-      <p class="profile-note">Dy rrethet janë lënë qëllimisht bosh. Kur të jenë gati fotografitë, ato mund të zëvendësojnë inicialet pa ndryshuar strukturën e faqes.</p>
     </div>
-  </div></div>
+  </div>
 </section>
 
 </main>
@@ -1114,32 +1091,6 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--ga);outline-offset:
     setPlace('shkoder');
   }
 
-  function initShareButtons(){
-    $$('main section[id] h2').forEach(heading => {
-      const section = heading.closest('section[id]');
-      if(!section || heading.querySelector('.share-heading')) return;
-      const button = document.createElement('button');
-      button.type = 'button';
-      button.className = 'share-heading';
-      button.textContent = 'Kopjo linkun';
-      button.addEventListener('click', async () => {
-        const url = `${window.location.origin}${window.location.pathname}#${section.id}`;
-        try{
-          await navigator.clipboard.writeText(url);
-          button.textContent = 'U kopjua';
-          button.classList.add('copied');
-          setTimeout(() => {
-            button.textContent = 'Kopjo linkun';
-            button.classList.remove('copied');
-          }, 1800);
-        }catch(error){
-          window.location.hash = section.id;
-        }
-      });
-      heading.appendChild(button);
-    });
-  }
-
   function initReveal(){
     const revealItems = $$('.rv,.rvl,.rvr,.rvs');
     if(!('IntersectionObserver' in window)){
@@ -1158,7 +1109,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--ga);outline-offset:
   }
 
   function initMotionGlow(){
-    $$('.cc,.ov-card,.fc,.ci,.story-card,.map-panel,.map-item,.about-note,.profile-card,.city-card,.glossary-entry,.related-card,.note-panel,.faq details').forEach(c => {
+    $$('.cc,.ov-card,.fc,.ci,.story-card,.map-panel,.map-item,.person-card,.city-card,.glossary-entry,.related-card,.note-panel,.faq details').forEach(c => {
       c.addEventListener('mousemove', e => {
         const r = c.getBoundingClientRect();
         c.style.setProperty('--mx', ((e.clientX - r.left) / r.width * 100) + '%');
@@ -1187,7 +1138,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--ga);outline-offset:
     toggle.addEventListener('click', () => {
       const active = document.body.classList.toggle('dark-reading');
       toggle.setAttribute('aria-pressed', String(active));
-      toggle.textContent = active ? 'Klasik' : 'Lexim';
+      toggle.textContent = active ? 'Dark Mode' : 'Normal';
     });
   }
 
@@ -1244,7 +1195,6 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--ga);outline-offset:
     initCursorLight();
     initThemeToggle();
     initMap();
-    initShareButtons();
     initImageFallbacks();
   });
 })();
