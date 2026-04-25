@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://elnor36.github.io/Etnotopomanistika-Elnor-Elezi/sitemap.xml
+Sitemap: https://elnor-elezi.github.io/Etnotopomanistika-Elnor-Elezi/sitemap.xml
